@@ -45,11 +45,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Properties
 
-`placeHolder` - Placeholder text for the dropdown. By default it shows: "Select an option".
-`options` - An array of options for the dropdown menu. Items can either be Strings or Objects. In case of objects, the property **"label"** is **mandatory**.
-`label` - A function which is executed on every object in "options" array. Returned value is a string representing that object is shown in the UI.
-`selectedIndex` - If any option has to be selected initially, pass the index of that option as "selectedIndex". It will be marked as selected.
-`onSelect()` - A handler function which will be called when user selects any option from the dropdown menu. Input parameters: selectedOption, selectedIndex
+`placeHolder` - Placeholder text for the dropdown. By default it shows: "Select an option". <br>
+`options` - An array of options for the dropdown menu. Items can either be Strings or Objects. In case of objects, the property **"label"** is **mandatory**. <br>
+`label` - A function which is executed on every object in "options" array. Returned value is a string representing that object is shown in the UI. <br>
+`selectedIndex` - If any option has to be selected initially, pass the index of that option as "selectedIndex". It will be marked as selected. <br>
+`onSelect()` - A handler function which will be called when user selects any option from the dropdown menu. Input parameters: selectedOption, selectedIndex <br>
 `visibleOptions` - Defines the number of options that are visible without the need of scrolling down. By default 8 items are visible.
 
 ## Available Scripts
