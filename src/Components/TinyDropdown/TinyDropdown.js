@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './TinyDropdown.css';
-import { visible } from 'ansi-colors';
 
 class TinyDropdown extends Component {
   constructor(props) {

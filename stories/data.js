@@ -1,4 +1,4 @@
-export const stringTypeOptions = ['abcd', 'efgh', 'ijkl', 'mnop', 'qrst', 'uvwx'];
+export const stringTypeOptions = [ 'Google', 'Microsoft', 'Amazon', 'Facebook', 'Twitter', 'Uber' ];
 export const objectTypeOptions = [
     {
       key: 'option-1',
