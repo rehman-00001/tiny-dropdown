@@ -21,7 +21,7 @@ You will also see any lint errors in the console.
 This will build the storybook configured in the Storybook directory into a static web app and place it inside the .out directory. Now you can deploy the content in the .out directory wherever you want.
 
 
-### `npx serve .`
+### `npm serve .`
 
 To test it locally.
 For more details, visit this [link](https://storybook.js.org/docs/basics/exporting-storybook/).

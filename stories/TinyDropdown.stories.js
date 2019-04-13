@@ -75,7 +75,7 @@ storiesOf('TinyDropdown', module)
   })
   .add('PlainDropdown - With custom visible rows', () => {
     return (
-      <div style={backgroundStyles} className="dropdown">
+      <div className="dropdown">
         <label>Select something : </label>
         <TinyDropdown
           options={objectTypeOptions}
