@@ -1,0 +1,50 @@
+{
+  "name": "tiny-dropdown",
+  "version": "0.1.0",
+  "description": "A simple, customizable, light-weight dropdown component implemented using React",
+  "private": true,
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "2.1.8"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook -c .storybook -o .out"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@storybook/react": "^5.0.6",
+    "@storybook/addon-actions": "^5.0.6",
+    "@storybook/addon-links": "^5.0.6",
+    "@storybook/addons": "^5.0.6",
+    "@babel/core": "^7.4.3",
+    "babel-loader": "^8.0.5"
+  },  
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rehman-00001/tiny-dropdown.git"
+  },
+  "keywords": [
+    "react",
+    "dropdown",
+    "javascript",
+    "component",
+    "storybook"
+  ],
+  "author": "Abdul Rehman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rehman-00001/tiny-dropdown/issues"
+  },
+  "homepage": "https://github.com/rehman-00001/tiny-dropdown#readme"
+}
