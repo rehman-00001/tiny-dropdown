@@ -1,13 +1,23 @@
 # tiny-dropdown -- React
+
 A simple, customizable, light-weight dropdown component built with love using React.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) & [Storybook](https://storybook.js.org/docs/guides/guide-react/).
 
 Live demo here: https://rehman-00001.github.io/tiny-dropdown
 
+## Installation
+
+`npm install tiny-dropdown` <br>
+or <br>
+`yarn add tiny-dropdown` <br>
+
 ## Usage
 
+`import TinyDropdown from 'tiny-dropdown';`
+
 ### Data type - Strings :
+
     const options = [ 'Google', 'Microsoft', 'Amazon', 'Facebook', 'Twitter', 'Uber' ];
     <TinyDropdown
         options={options}
@@ -17,7 +27,8 @@ Live demo here: https://rehman-00001.github.io/tiny-dropdown
         selectedIndex={2}
     />
 
-### Data type - Objects : 
+### Data type - Objects :
+
     const options = [
     {
       key: 'option-1',
@@ -35,10 +46,10 @@ Live demo here: https://rehman-00001.github.io/tiny-dropdown
       key: 'option-4',
       value: 'China'
     }]
-    
+
     <TinyDropdown
         options={options}
-        label={option => option.value}          
+        label={option => option.value}
         onSelect={(option, selectedIndex) => alert(option, selectedIndex)}
         placeHolder="Select your country"
         visibleOptions={3}
