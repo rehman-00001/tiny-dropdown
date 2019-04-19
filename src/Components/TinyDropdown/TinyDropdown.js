@@ -4,7 +4,7 @@ import './TinyDropdown.css';
 
 class TinyDropdown extends Component {
   constructor(props) {
-    super(props);    
+    super(props);
     this.state = {
       showPanel: false,
       selectedOption: this.props.selectedIndex
@@ -16,9 +16,12 @@ class TinyDropdown extends Component {
     this.parentDiv = React.createRef();
   }
 
-  initializeDefaults = () => {    
-    this.parentDiv.current.style.setProperty('--visible-rows',  this.props.visibleOptions);
-  }
+  initializeDefaults = () => {
+    this.parentDiv.current.style.setProperty(
+      '--visible-rows',
+      this.props.visibleOptions
+    );
+  };
 
   componentDidMount = () => {
     document.addEventListener('mousedown', this.handleOutsideClick);
@@ -112,7 +115,7 @@ class TinyDropdown extends Component {
               role="option"
               aria-selected={this.state.selectedIndex === index}
               key={option.key || this.getDefaultKey(option, index)}
-              className="dropdown-options dropdown-text"
+              className="dropdown-option dropdown-text"
               onClick={() => this.onOptionsSelected(index)}
             >
               {this.getOptionsLabel(option)}
@@ -159,7 +162,7 @@ TinyDropdown.propTypes = {
   onSelect: PropTypes.func.isRequired,
 
   /**
-   * @description Defines the number of options that are visible without 
+   * @description Defines the number of options that are visible without
    * the need of scrolling down.
    * By default 8 items are visible.
    */
@@ -172,6 +175,5 @@ TinyDropdown.defaultProps = {
   selectedIndex: null,
   visibleOptions: 8
 };
-
 
 export default TinyDropdown;

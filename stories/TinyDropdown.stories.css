@@ -1,0 +1,16 @@
+.code-block {
+  background: rgb(238, 233, 233);
+  font-family: monospace;
+  font-size: 11px;
+  padding: 12px;
+  border-radius: 6px;
+  max-width: 640px;
+}
+
+.markup {
+  margin-top: 12px;
+}
+
+.new-line {
+  display: block;
+}

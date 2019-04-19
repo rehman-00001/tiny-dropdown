@@ -2,30 +2,49 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { stringTypeOptions, objectTypeOptions } from './data';
+import './TinyDropdown.stories.css';
 
 import TinyDropdown from '../src/Components/TinyDropdown/TinyDropdown';
 // import TinyDropdown from '../dist/TinyDropdown';
 import '../src/Components/TinyDropdown/TinyDropdown.css';
 
 storiesOf('TinyDropdown', module)
-  .add('PlainDropdown - Options type: String', () => {  
+  .add('PlainDropdown - Options type: String', () => {
     return (
       <div className="dropdown">
         <label>Select something : </label>
-        <TinyDropdown options={stringTypeOptions} onSelect={option => action('clicked')} />
+        <TinyDropdown
+          options={stringTypeOptions}
+          onSelect={option => action('clicked')}
+        />
         <p className="dropdown-text">
           This is a dummy paragraph added to see how the dropdown behaves when
           it is expanded. Ideally the paragraph should not be pushed down on
           expanding the panel. Seems like this dropdown works properly.
         </p>
         <h3>Usage</h3>
-        <code>
-          {"const options = [ 'Google', 'Microsoft', 'Amazon', 'Facebook', 'Twitter', 'Uber' ];"}<br></br><br></br>
-          {"<TinyDropdown"}<br></br>
-          {'\u00A0'}{'\u00A0'}{"options={options}"}<br></br>
-          {'\u00A0'}{'\u00A0'}{"onSelect={(option, selectedIndex) => console.log(option, selectedIndex)}"}<br></br>
-          {"/>"}<br></br>
-        </code>
+        <section className="code-block">
+          <code>
+            const options = [ 'Google', 'Microsoft', 'Amazon', 'Facebook',
+            'Twitter', 'Uber' ];
+          </code>
+          <div className="markup">
+            <code className="new-line">{'<TinyDropdown'}</code>
+            <code className="new-line">
+              {'\u00A0'}
+              {'\u00A0'}
+              {'options={options}'}
+            </code>
+            <code className="new-line">
+              {'\u00A0'}
+              {'\u00A0'}
+              {
+                'onSelect={(option, selectedIndex) => console.log(option, selectedIndex)}'
+              }
+            </code>
+            <code className="new-line">{'/>'}</code>
+          </div>
+        </section>
       </div>
     );
   })
@@ -36,7 +55,7 @@ storiesOf('TinyDropdown', module)
         <TinyDropdown
           options={objectTypeOptions}
           label={option => option.value}
-          onSelect={option => action("clicked")}
+          onSelect={option => action('clicked')}
         />
         <p className="dropdown-text">
           This is a dummy paragraph added to see how the dropdown behaves when
@@ -44,28 +63,91 @@ storiesOf('TinyDropdown', module)
           expanding the panel. Seems like this dropdown works properly.
         </p>
         <h3>Usage</h3>
-        <code>
-          {"const options = [ "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-1', value: 'United States' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-2', value: 'Russia' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-3', value: 'India' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-4', value: 'China' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-5', value: 'United Kingdom' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-6', value: 'Germany' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-7', value: 'France' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-8', value: 'Japan' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-9', value: 'Israel' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-10', value: 'Saudi arabia' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-11', value: 'United Arab Emirates' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-12', value: 'Other' } "}<br></br>
-          {" ]; "}<br></br><br></br>
-          {"<TinyDropdown"}<br></br>
-          {'\u00A0'}{'\u00A0'}{"options={objectTypeOptions}"}<br></br>
-          {'\u00A0'}{'\u00A0'}{"label={option => option.value}"}<br></br>
-          {'\u00A0'}{'\u00A0'}{"onSelect={(option, selectedIndex) => console.log(option, selectedIndex)}"}<br></br>
-          {"/>"}<br></br>
-        </code>
-
+        <section className="code-block">
+          <code className="new-line">{'const options = [ '}</code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-1', value: 'United States' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-2', value: 'Russia' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-3', value: 'India' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-4', value: 'China' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-5', value: 'United Kingdom' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-6', value: 'Germany' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-7', value: 'France' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-8', value: 'Japan' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-9', value: 'Israel' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-10', value: 'Saudi arabia' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-11', value: 'United Arab Emirates' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-12', value: 'Other' } "}
+          </code>
+          <code className="new-line">{' ]; '}</code>
+          <div className="markup">
+            <code className="new-line">{'<TinyDropdown'}</code>
+            <code className="new-line">
+              {'\u00A0'}
+              {'\u00A0'}
+              {'options={options}'}
+            </code>
+            <code className="new-line">
+              {'\u00A0'}
+              {'\u00A0'}
+              {'label={option => option.value}'}
+            </code>
+            <code className="new-line">
+              {'\u00A0'}
+              {'\u00A0'}
+              {
+                'onSelect={(option, selectedIndex) => console.log(option, selectedIndex)}'
+              }
+            </code>
+            <code className="new-line">{'/>'}</code>
+          </div>
+        </section>
       </div>
     );
   })
@@ -77,7 +159,7 @@ storiesOf('TinyDropdown', module)
           options={objectTypeOptions}
           label={option => option.value}
           placeHolder="Select your country"
-          onSelect={option => action("clicked")}
+          onSelect={option => action('clicked')}
         />
         <p className="dropdown-text">
           This is a dummy paragraph added to see how the dropdown behaves when
@@ -85,28 +167,96 @@ storiesOf('TinyDropdown', module)
           expanding the panel. Seems like this dropdown works properly.
         </p>
         <h3>Usage</h3>
-        <code>
-          {"const options = [ "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-1', value: 'United States' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-2', value: 'Russia' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-3', value: 'India' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-4', value: 'China' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-5', value: 'United Kingdom' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-6', value: 'Germany' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-7', value: 'France' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-8', value: 'Japan' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-9', value: 'Israel' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-10', value: 'Saudi arabia' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-11', value: 'United Arab Emirates' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-12', value: 'Other' } "}<br></br>
-          {" ]; "}<br></br><br></br>
-          {"<TinyDropdown"}<br></br>
-          {'\u00A0'}{'\u00A0'}{"options={options}"}<br></br>
-          {'\u00A0'}{'\u00A0'}{"label={option => option.value}"}<br></br>          
-          {'\u00A0'}{'\u00A0'}{"placeHolder=\"Select your country\""}<br></br>
-          {'\u00A0'}{'\u00A0'}{"onSelect={(option, selectedIndex) => console.log(option, selectedIndex)}"}<br></br>
-          {"/>"}<br></br>
-        </code>
+        <section className="code-block">
+          <code className="new-line">{'const options = [ '}</code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-1', value: 'United States' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-2', value: 'Russia' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-3', value: 'India' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-4', value: 'China' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-5', value: 'United Kingdom' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-6', value: 'Germany' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-7', value: 'France' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-8', value: 'Japan' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-9', value: 'Israel' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-10', value: 'Saudi arabia' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-11', value: 'United Arab Emirates' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-12', value: 'Other' } "}
+          </code>
+          <code className="new-line">{' ]; '}</code>
+          <div className="markup">
+            <code className="new-line">{'<TinyDropdown'}</code>
+            <code className="new-line">
+              {'\u00A0'}
+              {'\u00A0'}
+              {'options={options}'}
+            </code>
+            <code className="new-line">
+              {'\u00A0'}
+              {'\u00A0'}
+              {'label={option => option.value}'}
+            </code>
+            <code className="new-line">
+              {'\u00A0'}
+              {'\u00A0'}
+              {
+                'onSelect={(option, selectedIndex) => console.log(option, selectedIndex)}'
+              }
+            </code>
+            <code className="new-line">
+              {'\u00A0'}
+              {'\u00A0'}
+              {'placeHolder="Select your country"'}
+            </code>
+            <code className="new-line">{'/>'}</code>
+          </div>
+        </section>
       </div>
     );
   })
@@ -118,7 +268,7 @@ storiesOf('TinyDropdown', module)
           options={objectTypeOptions}
           label={option => option.value}
           selectedIndex={2}
-          onSelect={option => action("clicked")}
+          onSelect={option => action('clicked')}
         />
         <p className="dropdown-text">
           This is a dummy paragraph added to see how the dropdown behaves when
@@ -126,28 +276,96 @@ storiesOf('TinyDropdown', module)
           expanding the panel. Seems like this dropdown works properly.
         </p>
         <h3>Usage</h3>
-        <code>
-          {"const options = [ "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-1', value: 'United States' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-2', value: 'Russia' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-3', value: 'India' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-4', value: 'China' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-5', value: 'United Kingdom' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-6', value: 'Germany' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-7', value: 'France' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-8', value: 'Japan' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-9', value: 'Israel' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-10', value: 'Saudi arabia' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-11', value: 'United Arab Emirates' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-12', value: 'Other' } "}<br></br>
-          {" ]; "}<br></br><br></br>
-          {"<TinyDropdown"}<br></br>
-          {'\u00A0'}{'\u00A0'}{"options={options}"}<br></br>
-          {'\u00A0'}{'\u00A0'}{"label={option => option.value}"}<br></br>
-          {'\u00A0'}{'\u00A0'}{"selectedIndex={2}"}<br></br>
-          {'\u00A0'}{'\u00A0'}{"onSelect={(option, selectedIndex) => console.log(option, selectedIndex)}"}<br></br>
-          {"/>"}<br></br>
-        </code>
+        <section className="code-block">
+          <code className="new-line">{'const options = [ '}</code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-1', value: 'United States' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-2', value: 'Russia' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-3', value: 'India' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-4', value: 'China' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-5', value: 'United Kingdom' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-6', value: 'Germany' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-7', value: 'France' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-8', value: 'Japan' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-9', value: 'Israel' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-10', value: 'Saudi arabia' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-11', value: 'United Arab Emirates' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-12', value: 'Other' } "}
+          </code>
+          <code className="new-line">{' ]; '}</code>
+          <div className="markup">
+            <code className="new-line">{'<TinyDropdown'}</code>
+            <code className="new-line">
+              {'\u00A0'}
+              {'\u00A0'}
+              {'options={options}'}
+            </code>
+            <code className="new-line">
+              {'\u00A0'}
+              {'\u00A0'}
+              {'label={option => option.value}'}
+            </code>
+            <code className="new-line">
+              {'\u00A0'}
+              {'\u00A0'}
+              {
+                'onSelect={(option, selectedIndex) => console.log(option, selectedIndex)}'
+              }
+            </code>
+            <code className="new-line">
+              {'\u00A0'}
+              {'\u00A0'}
+              {'selectedIndex={2}'}
+            </code>
+            <code className="new-line">{'/>'}</code>
+          </div>
+        </section>
       </div>
     );
   })
@@ -157,8 +375,8 @@ storiesOf('TinyDropdown', module)
         <label>Select something : </label>
         <TinyDropdown
           options={objectTypeOptions}
-          label={option => option.value}          
-          onSelect={option => action("clicked")}
+          label={option => option.value}
+          onSelect={option => action('clicked')}
           visibleOptions={4}
         />
         <p className="dropdown-text">
@@ -167,28 +385,96 @@ storiesOf('TinyDropdown', module)
           expanding the panel. Seems like this dropdown works properly.
         </p>
         <h3>Usage</h3>
-        <code>
-          {"const options = [ "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-1', value: 'United States' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-2', value: 'Russia' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-3', value: 'India' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-4', value: 'China' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-5', value: 'United Kingdom' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-6', value: 'Germany' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-7', value: 'France' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-8', value: 'Japan' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-9', value: 'Israel' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-10', value: 'Saudi arabia' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-11', value: 'United Arab Emirates' }, "}<br></br>
-          {'\u00A0'}{'\u00A0'}{"{ key: 'option-12', value: 'Other' } "}<br></br>
-          {" ]; "}<br></br><br></br>
-          {"<TinyDropdown"}<br></br>
-          {'\u00A0'}{'\u00A0'}{"options={options}"}<br></br>
-          {'\u00A0'}{'\u00A0'}{"label={option => option.value}"}<br></br>
-          {'\u00A0'}{'\u00A0'}{"onSelect={(option, selectedIndex) => console.log(option, selectedIndex)}"}<br></br>
-          {'\u00A0'}{'\u00A0'}{"visibleOptions={4}"}<br></br>
-          {"/>"}<br></br>
-        </code>
+        <section className="code-block">
+          <code className="new-line">{'const options = [ '}</code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-1', value: 'United States' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-2', value: 'Russia' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-3', value: 'India' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-4', value: 'China' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-5', value: 'United Kingdom' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-6', value: 'Germany' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-7', value: 'France' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-8', value: 'Japan' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-9', value: 'Israel' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-10', value: 'Saudi arabia' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-11', value: 'United Arab Emirates' }, "}
+          </code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {"{ key: 'option-12', value: 'Other' } "}
+          </code>
+          <code className="new-line">{' ]; '}</code>
+          <div className="markup">
+            <code className="new-line">{'<TinyDropdown'}</code>
+            <code className="new-line">
+              {'\u00A0'}
+              {'\u00A0'}
+              {'options={options}'}
+            </code>
+            <code className="new-line">
+              {'\u00A0'}
+              {'\u00A0'}
+              {'label={option => option.value}'}
+            </code>
+            <code className="new-line">
+              {'\u00A0'}
+              {'\u00A0'}
+              {
+                'onSelect={(option, selectedIndex) => console.log(option, selectedIndex)}'
+              }
+            </code>
+            <code className="new-line">
+              {'\u00A0'}
+              {'\u00A0'}
+              {'visibleOptions={4}'}
+            </code>
+            <code className="new-line">{'/>'}</code>
+          </div>
+        </section>
       </div>
     );
   });

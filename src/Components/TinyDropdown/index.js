@@ -1,3 +1,3 @@
-import TinyDropdown from './TinyDropdown.js';
+import TinyDropdown from './TinyDropdown.js'
 
-export default TinyDropdown;
+export default TinyDropdown
