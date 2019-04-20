@@ -90,39 +90,67 @@ class TinyDropdown extends Component {
   };
 
   render() {
-    const dropdownMenu = (
-      <button
-        role="menu"
-        className="dropdown-menu"
-        onClick={this.toggleDropdownMenu}
-      >
-        <span className="dropdown-label dropdown-text">
-          {this.getSelectedOptionLabel()}
-        </span>
-        <span className="arrow-down" />
-      </button>
-    );
-
     return (
       <div className="tiny-dropdown" ref={this.parentDiv}>
-        {dropdownMenu}
-        <ul
-          className="dropdown-panel"
-          style={{ display: this.state.showPanel ? 'inline-block' : 'none' }}
-        >
-          {this.props.options.map((option, index) => (
-            <li
-              role="option"
-              aria-selected={this.state.selectedIndex === index}
-              key={option.key || this.getDefaultKey(option, index)}
-              className="dropdown-option dropdown-text"
-              onClick={() => this.onOptionsSelected(index)}
-            >
-              {this.getOptionsLabel(option)}
-            </li>
-          ))}
-        </ul>
+        {this.renderDropdownButton()}
+        {this.renderDropdownOptionsPanel()}
       </div>
+    );
+  }
+
+  renderDropdownButton() {
+    const isPanelActive = this.state.showPanel;
+    const dropdownMenuClasses = [
+      'dropdown-menu',
+      isPanelActive ? 'panel-open' : ''
+    ].join(' ');
+
+    const arrowClass = isPanelActive ? 'arrow-up' : 'arrow-down';
+
+    return (
+      <button
+        role="menu"
+        className={dropdownMenuClasses}
+        style={this.props.cssOverrides.dropdownButton}
+        onClick={this.toggleDropdownMenu}
+      >
+        <span
+          className="dropdown-label dropdown-text"
+          style={this.props.cssOverrides.dropdownButtonLabel}
+        >
+          {this.getSelectedOptionLabel()}
+        </span>
+        <span className={arrowClass} />
+      </button>
+    );
+  }
+
+  renderDropdownOptionsPanel() {
+    const panelStyles = {
+      ...this.props.cssOverrides.dropdownPanel,
+      display: this.state.showPanel ? 'inline-block' : 'none'
+    };
+
+    const selectedIndex = this.state.selectedIndex;
+    const { dropdownOption, dropdownOptionSelected } = this.props.cssOverrides;
+
+    return (
+      <ul className="dropdown-panel" style={panelStyles}>
+        {this.props.options.map((option, index) => (
+          <li
+            role="option"
+            aria-selected={selectedIndex === index}
+            key={option.key || this.getDefaultKey(option, index)}
+            className="dropdown-option dropdown-text"
+            style={
+              selectedIndex === index ? dropdownOptionSelected : dropdownOption
+            }
+            onClick={() => this.onOptionsSelected(index)}
+          >
+            {this.getOptionsLabel(option)}
+          </li>
+        ))}
+      </ul>
     );
   }
 }
@@ -166,14 +194,19 @@ TinyDropdown.propTypes = {
    * the need of scrolling down.
    * By default 8 items are visible.
    */
-  visibleOptions: PropTypes.number
+  visibleOptions: PropTypes.number,
+
+  cssOverrides: PropTypes.object
 };
 
 TinyDropdown.defaultProps = {
   placeHolder: 'Select an option',
   label: null,
   selectedIndex: null,
-  visibleOptions: 8
+  visibleOptions: 8,
+  cssOverrides: {
+    dropdownButton: ''
+  }
 };
 
 export default TinyDropdown;

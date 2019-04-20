@@ -4,7 +4,7 @@ module.exports = {
 	entry: path.join(__dirname, '../src/Components/TinyDropdown/index.js'),
 	output: {
 		filename: 'index.js',
-		path: path.join(__dirname, '../dist/TinyDropdown'),
+		path: path.join(__dirname, '../build/TinyDropdown'),
 		libraryExport: 'default',
 		libraryTarget: 'amd'
 	},

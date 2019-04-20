@@ -6,7 +6,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Live demo here: https://rehman-00001.github.io/tiny-dropdown
 
+## Installation
+
+`npm install tiny-dropdown` <br>
+or <br>
+`yarn add tiny-dropdown` <br>
+
 ## Usage
+
+`import TinyDropdown from 'tiny-dropdown';`
 
 ### Data type - Strings :
 
@@ -62,23 +70,11 @@ Live demo here: https://rehman-00001.github.io/tiny-dropdown
 
 `visibleOptions` - Defines the number of options that are visible without the need of scrolling down. By default 8 items are visible.
 
-## Available Scripts
+## Features Planned
 
-In the project directory, you can run:
-
-### `npm run storybook`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:6006](http://localhost:6006) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm run build-storybook`
-
-This will build the storybook configured in the Storybook directory into a static web app and place it inside the .out directory. Now you can deploy the content in the .out directory wherever you want.
-
-### `npm serve .`
-
-To test it locally.
-For more details, visit this [link](https://storybook.js.org/docs/basics/exporting-storybook/).
+Add support to customize CSS styles
+Fitler support for options
+Custom HTML for options
+Load data from ajax
+Selected element styles
+CSS animations & Much more to come

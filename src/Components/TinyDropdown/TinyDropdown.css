@@ -8,6 +8,16 @@
   margin: 0px 5px;
 }
 
+.arrow-up {
+  width: 0;
+  height: 0;
+  display: inline-block;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid black;
+  margin: 0px 5px 1px 5px;
+}
+
 .tiny-dropdown {
   --selected-item: rgba(238, 238, 238, 0.829);
   --options-row-height: 28px;
@@ -33,6 +43,20 @@
   border: none;
   background: transparent;
   font-family: inherit;
+  outline: none;
+  border-radius: 4px;
+}
+
+.tiny-dropdown .dropdown-menu.panel-open {
+  background: rgba(238, 238, 238, 0.829);
+}
+
+.tiny-dropdown .dropdown-menu:hover {
+  background: rgba(238, 238, 238, 0.829);
+}
+
+.tiny-dropdown .dropdown-menu:active {
+  background: rgba(197, 197, 197, 0.829);
 }
 
 .tiny-dropdown .dropdown-menu .dropdown-label {

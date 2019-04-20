@@ -74,7 +74,7 @@ or <br>
 
 In the project directory, you can run:
 
-### `npm run storybook`
+### `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:6006](http://localhost:6006) to view it in the browser.
@@ -90,3 +90,12 @@ This will build the storybook configured in the Storybook directory into a stati
 
 To test it locally.
 For more details, visit this [link](https://storybook.js.org/docs/basics/exporting-storybook/).
+
+## Features Planned
+
+Add support to customize CSS styles
+Fitler support for options
+Custom HTML for options
+Load data from ajax
+Selected element styles
+CSS animations & Much more to come

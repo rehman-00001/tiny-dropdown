@@ -1,6 +1,6 @@
 {
   "name": "tiny-dropdown",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A simple, customizable, light-weight dropdown component built with love using React",
   "dependencies": {
     "react": "^16.8.6",
@@ -8,9 +8,10 @@
     "react-scripts": "2.1.8"
   },
   "scripts": {
-    "storybook": "start-storybook -p 6006",
+    "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o .out",
-    "build-component": "webpack --mode production --config ./webpack/config.js"
+    "build-component": "webpack --mode production --config ./webpack/config.js",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,6 +29,7 @@
     "@storybook/addon-links": "^5.0.6",
     "@storybook/addons": "^5.0.6",
     "@storybook/react": "^5.0.6",
+    "@storybook/storybook-deployer": "^2.8.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
