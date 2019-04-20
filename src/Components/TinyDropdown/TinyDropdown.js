@@ -14,12 +14,23 @@ class TinyDropdown extends Component {
       placeHolder: this.props.placeHolder
     };
     this.parentDiv = React.createRef();
+    this.button = React.createRef();
+    this.arrow = React.createRef();
   }
 
   initializeDefaults = () => {
     this.parentDiv.current.style.setProperty(
       '--visible-rows',
       this.props.visibleOptions
+    );
+    // hack to set color of the button to the dropdown-toggle-arrow
+    this.arrow.current.style.setProperty(
+      'border-bottom-color',
+      this.button.current.style.color
+    );
+    this.arrow.current.style.setProperty(
+      'border-top-color',
+      this.button.current.style.color
     );
   };
 
@@ -113,6 +124,7 @@ class TinyDropdown extends Component {
         className={dropdownMenuClasses}
         style={this.props.cssOverrides.dropdownButton}
         onClick={this.toggleDropdownMenu}
+        ref={this.button}
       >
         <span
           className="dropdown-label dropdown-text"
@@ -120,7 +132,7 @@ class TinyDropdown extends Component {
         >
           {this.getSelectedOptionLabel()}
         </span>
-        <span className={arrowClass} />
+        <span className={arrowClass} ref={this.arrow} />
       </button>
     );
   }
@@ -196,6 +208,14 @@ TinyDropdown.propTypes = {
    */
   visibleOptions: PropTypes.number,
 
+  /**
+   * @description  Specifies the styles to be overridden. It has sub-properties:
+   *
+   * dropdownButton - Overrides the styles for dropdown itself.
+   * dropdownPanel - Overrides the styles for the dropdown popup panel.
+   * dropdownOption - Overrides the styles for every single option in the popup panel.
+   * dropdownOptionSelected - Overrides the styles for selected option in the popup panel.
+   */
   cssOverrides: PropTypes.object
 };
 
@@ -205,7 +225,10 @@ TinyDropdown.defaultProps = {
   selectedIndex: null,
   visibleOptions: 8,
   cssOverrides: {
-    dropdownButton: ''
+    dropdownButton: null,
+    dropdownPanel: null,
+    dropdownOption: null,
+    dropdownOptionSelected: null
   }
 };
 

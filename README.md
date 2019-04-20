@@ -68,7 +68,16 @@ or <br>
 
 `onSelect()` - A handler function which will be called when user selects any option from the dropdown menu. Input parameters: selectedOption, selectedIndex <br>
 
-`visibleOptions` - Defines the number of options that are visible without the need of scrolling down. By default 8 items are visible.
+`visibleOptions` - Defines the number of options that are visible without the need of scrolling down. By default 8 items are visible. <br>
+
+`cssOverrides` - Specifies the styles to be overridden. It has 4 sub-properties:
+
+```
+  dropdownButton - Overrides the styles for dropdown itself.
+  dropdownPanel - Overrides the styles for the dropdown popup panel.
+  dropdownOption - Overrides the styles for every single option in the popup panel.
+  dropdownOptionSelected - Overrides the styles for selected option in the popup panel.
+```
 
 ## Available Scripts
 

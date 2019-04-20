@@ -12,22 +12,6 @@ export default () => {
         options={objectTypeOptions}
         label={option => option.value}
         onSelect={option => action('clicked')}
-        cssOverrides={{
-          dropdownButton: {
-            color: 'violet',
-            border: '2px solid blue'
-          },
-          dropdownPanel: {
-            background: 'yellow'
-          },
-          dropdownOption: {
-            color: 'brown'
-          },
-          dropdownOptionSelected: {
-            background: 'lightgreen',
-            fontFamily: 'serif'
-          }
-        }}
       />
       <p className="dropdown-text">
         This is a dummy paragraph added to see how the dropdown behaves when it
