@@ -102,9 +102,9 @@ For more details, visit this [link](https://storybook.js.org/docs/basics/exporti
 
 ## Features Planned
 
-Add support to customize CSS styles
-Fitler support for options
-Custom HTML for options
-Load data from ajax
-Selected element styles
-CSS animations & Much more to come
+Add support to customize CSS styles <br>
+Fitler support for options <br>
+Custom HTML for options <br>
+Load data from ajax <br>
+Selected element styles <br>
+CSS animations & Much more to come <br>
