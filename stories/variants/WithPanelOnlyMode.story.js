@@ -9,7 +9,11 @@ export default () => {
   return (
     <div className="dropdown">
       <label>Select something : </label>
-      <TinyDropdown options={stringTypeOptions} onSelect={action('clicked')} />
+      <TinyDropdown
+        panelOnly={true}
+        options={stringTypeOptions}
+        onSelect={action('clicked')}
+      />
       <p className="dropdown-text">
         This is a dummy paragraph added to see how the dropdown behaves when it
         is expanded. Ideally the paragraph should not be pushed down on
@@ -23,6 +27,11 @@ export default () => {
         </code>
         <div className="markup">
           <code className="new-line">{'<TinyDropdown'}</code>
+          <code className="new-line">
+            {'\u00A0'}
+            {'\u00A0'}
+            {'panelOnly={true}'}
+          </code>
           <code className="new-line">
             {'\u00A0'}
             {'\u00A0'}

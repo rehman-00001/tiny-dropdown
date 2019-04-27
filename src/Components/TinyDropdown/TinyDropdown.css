@@ -51,6 +51,10 @@
   background: rgba(238, 238, 238, 0.829);
 }
 
+.tiny-dropdown .dropdown-menu.panel-open.panel-only {
+  visibility: hidden;
+}
+
 .tiny-dropdown .dropdown-menu:hover {
   background: rgba(238, 238, 238, 0.829);
 }
@@ -91,4 +95,10 @@
   max-height: calc(var(--options-row-height) * var(--visible-rows));
   overflow-y: auto;
   display: block;
+}
+
+.tiny-dropdown.panel-only .dropdown-panel {
+  top: 0px;
+  left: 0px;
+  margin: 0px;
 }

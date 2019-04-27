@@ -70,6 +70,8 @@ or <br>
 
 `visibleOptions` - Defines the number of options that are visible without the need of scrolling down. By default 8 items are visible. <br>
 
+`panelOnly` - If set to true, expanding the panel just hides the dropdown button. Only the options panel is displayed. <br>
+
 `cssOverrides` - Specifies the styles to be overridden. It has 4 sub-properties:
 
 ```
@@ -102,7 +104,7 @@ For more details, visit this [link](https://storybook.js.org/docs/basics/exporti
 
 ## Features Planned
 
-Add support to customize CSS styles <br>
+~~Add support to customize CSS styles~~ <br>
 Fitler support for options <br>
 Custom HTML for options <br>
 Load data from ajax <br>

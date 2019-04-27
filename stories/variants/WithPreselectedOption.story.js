@@ -3,6 +3,7 @@ import TinyDropdown from '../../src/Components/TinyDropdown/TinyDropdown';
 import '../TinyDropdown.stories.css';
 // import TinyDropdown from '../../dist/TinyDropdown';
 import { objectTypeOptions } from '../data';
+import { action } from '@storybook/addon-actions';
 
 export default () => {
   return (
@@ -12,7 +13,7 @@ export default () => {
         options={objectTypeOptions}
         label={option => option.value}
         selectedIndex={2}
-        onSelect={option => action('clicked')}
+        onSelect={action('clicked')}
       />
       <p className="dropdown-text">
         This is a dummy paragraph added to see how the dropdown behaves when it

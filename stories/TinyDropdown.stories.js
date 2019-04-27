@@ -6,6 +6,7 @@ import OptionsTypeStringStory from './variants/OptionsTypeString.story';
 import WithPreselectedOptionStory from './variants/WithPreselectedOption.story';
 import WithCustomVisibleRowsStory from './variants/WithCustomVisibleRows.story';
 import WithCustomStylesStory from './variants/WithCustomStyles.story';
+import WithPanelOnlyModeStory from './variants/WithPanelOnlyMode.story';
 
 storiesOf('TinyDropdown', module)
   .add('Options type: String', OptionsTypeStringStory)
@@ -13,4 +14,5 @@ storiesOf('TinyDropdown', module)
   .add('With custom placeholder', WithCustomPlaceholderStory)
   .add('With pre-selected option', WithPreselectedOptionStory)
   .add('With custom visible rows', WithCustomVisibleRowsStory)
-  .add('With custom css styles', WithCustomStylesStory);
+  .add('With custom css styles', WithCustomStylesStory)
+  .add('Panel only mode', WithPanelOnlyModeStory);

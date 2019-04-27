@@ -101,8 +101,13 @@ class TinyDropdown extends Component {
   };
 
   render() {
+    const classes = [
+      'tiny-dropdown',
+      this.props.panelOnly ? 'panel-only' : ''
+    ].join(' ');
+
     return (
-      <div className="tiny-dropdown" ref={this.parentDiv}>
+      <div className={classes} ref={this.parentDiv}>
         {this.renderDropdownButton()}
         {this.renderDropdownOptionsPanel()}
       </div>
@@ -110,16 +115,18 @@ class TinyDropdown extends Component {
   }
 
   renderDropdownButton() {
-    const isPanelActive = this.state.showPanel;
+    const isPanelOpen = this.state.showPanel;
+    const { panelOnly } = this.props;
     const dropdownMenuClasses = [
       'dropdown-menu',
-      isPanelActive ? 'panel-open' : ''
+      isPanelOpen ? 'panel-open' : '',
+      panelOnly ? 'panel-only' : ''
     ].join(' ');
 
-    const arrowClass = isPanelActive ? 'arrow-up' : 'arrow-down';
+    const arrowClass = isPanelOpen ? 'arrow-up' : 'arrow-down';
 
     return (
-      <button
+      <div
         role="menu"
         className={dropdownMenuClasses}
         style={this.props.cssOverrides.dropdownButton}
@@ -133,7 +140,7 @@ class TinyDropdown extends Component {
           {this.getSelectedOptionLabel()}
         </span>
         <span className={arrowClass} ref={this.arrow} />
-      </button>
+      </div>
     );
   }
 
@@ -209,6 +216,12 @@ TinyDropdown.propTypes = {
   visibleOptions: PropTypes.number,
 
   /**
+   * @description If set to true, expanding the panel just hides the dropdown button.
+   * Only the options panel is displayed.
+   */
+  panelOnly: PropTypes.bool,
+
+  /**
    * @description  Specifies the styles to be overridden. It has sub-properties:
    *
    * dropdownButton - Overrides the styles for dropdown itself.
@@ -224,6 +237,7 @@ TinyDropdown.defaultProps = {
   label: null,
   selectedIndex: null,
   visibleOptions: 8,
+  panelOnly: false,
   cssOverrides: {
     dropdownButton: null,
     dropdownPanel: null,

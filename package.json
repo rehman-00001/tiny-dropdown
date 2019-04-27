@@ -1,6 +1,6 @@
 {
   "name": "tiny-dropdown",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "A simple, customizable, light-weight dropdown component built with love using React",
   "dependencies": {
     "react": "^16.8.6",
