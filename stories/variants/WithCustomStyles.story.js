@@ -16,14 +16,16 @@ export default () => {
         onSelect={action('clicked')}
         cssOverrides={{
           dropdownButton: {
-            color: 'brown',
-            border: '1px solid #ffff7f'
+            color: '#35a92f',
+            border: '1px solid #35a92f',
+            borderRadius: '30px',
+            padding: '0px 4px'
           },
           dropdownPanel: {
-            background: '#ffff7f'
+            background: 'rgb(208, 255, 198)'
           },
           dropdownOption: {
-            color: 'brown'
+            color: '#35a92f'
           },
           dropdownOptionSelected: {
             background: 'lightgreen',
