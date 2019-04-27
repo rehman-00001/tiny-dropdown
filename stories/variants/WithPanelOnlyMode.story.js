@@ -1,7 +1,7 @@
 import React from 'react';
-import TinyDropdown from '../../src/Components/TinyDropdown/TinyDropdown';
+// import TinyDropdown from '../../src/Components/TinyDropdown/TinyDropdown';
 import '../TinyDropdown.stories.css';
-// import TinyDropdown from '../../dist/TinyDropdown';
+import TinyDropdown from '../../build/TinyDropdown';
 import { stringTypeOptions } from '../data';
 import { action } from '@storybook/addon-actions';
 
