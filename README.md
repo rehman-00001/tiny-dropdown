@@ -2,8 +2,6 @@
 
 A simple, customizable, light-weight dropdown component built with love using React.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) & [Storybook](https://storybook.js.org/docs/guides/guide-react/).
-
 Live demo here: https://rehman-00001.github.io/tiny-dropdown
 
 ## Installation
